@@ -1,0 +1,30 @@
+### 020 (20.B) --- GENERÁTOR NÁHODNÝCH ČÍSEL DO SPORTKY s random.shuffle a bubble sortem ---
+
+import random
+
+seznam_cisel = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49]
+
+# Python program for implementation of Bubble Sort
+
+def bubbleSort(arr):
+    n = len(arr)
+    swapped = False
+    for i in range(n-1):
+        for j in range(0, n-i-1):
+            if arr[j] > arr[j + 1]:
+                swapped = True
+                arr[j], arr[j + 1] = arr[j + 1], arr[j]
+        if not swapped:
+            return
+
+
+while True:
+    random.shuffle(seznam_cisel)
+    arr = (seznam_cisel[0:6])
+
+    bubbleSort(arr)
+
+    print("Náhodná čísla jsou:")
+    for i in range(len(arr)):
+        print("% d" % arr[i], end=" ")
+    input()
