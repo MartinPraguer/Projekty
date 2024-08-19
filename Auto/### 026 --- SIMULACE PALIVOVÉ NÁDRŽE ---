@@ -1,0 +1,34 @@
+### 026 --- SIMULACE PALIVOVÉ NÁDRŽE ---
+
+# zadávej zlomky: 1/4, 2/4, 3/4, 4/4, 1/3, 2/3, 3/3, 1/2,...
+
+class PalivovaNadrz:
+    def __init__(self, kapacita):
+        self.kapacita = kapacita
+        self.obsah = 0
+
+    def natankuj(self, mnozstvi):
+        self.obsah = min(self.kapacita, self.obsah + mnozstvi)
+
+    def ziskej_procenta(self):
+        return (self.obsah / self.kapacita) * 100
+
+# Příklad použití:
+nadrz = PalivovaNadrz(60)  # Nastavení kapacity nádrže na 60 litrů
+nadrz.natankuj(30)         # Natankování 30 litrů
+dotaz = input()
+if "/" in dotaz:
+    casti = dotaz.split("/")
+    try:
+        podil = int(casti[0]) / int(casti[1])
+        nadrz.obsah = nadrz.kapacita * podil
+        if nadrz.ziskej_procenta() <= 100:
+            print(f"Hodnota: {nadrz.ziskej_procenta()}%")
+        elif nadrz.ziskej_procenta() > 100:
+            print("Zadej správnou hodnotu.")
+    except ZeroDivisionError:
+        print("Chyba: Není možné dělit nulou.")
+    except ValueError:
+        print("Chyba: Špatný formát vstupu.")
+else:
+    print("Chyba: Neplatný vstup.")
