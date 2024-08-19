@@ -1,0 +1,23 @@
+### 006 --- DRON HLÍDAJÍCÍ ODSTUP 2 METRŮ ---
+# (např. Itálie nebo Čína v době covidu)
+
+import math
+
+MINIMALNI_VZDALENOST = 2
+
+Ax = float(input("Uživatel A je na ose x v metrech: "))
+Ay = float(input("Uživatel A je na ose y v metrech: "))
+
+Bx = float(input("Uživatel B je na ose x v metrech: "))
+By = float(input("Uživatel B je na ose y v metrech: "))
+
+vzdalenostAB = math.sqrt((Bx-Ax)**2 + (By-Ay)**2)
+vzdalte_se = MINIMALNI_VZDALENOST - vzdalenostAB
+
+str_vzdalte_se = str(vzdalte_se)
+str_vzdalenostAB = str(vzdalenostAB)
+
+if vzdalenostAB < 2:
+    print(f"\nVzdalte se od sebe o {str_vzdalte_se[0:3]} metrů!")
+if vzdalenostAB >= 2:
+    print(f"\nVaše vzdálenost je ({str_vzdalenostAB[0:3]} metrů) v pořádku. Přeji pěkný den.")
