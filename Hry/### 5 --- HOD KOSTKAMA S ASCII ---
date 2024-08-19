@@ -1,0 +1,33 @@
+### 5 --- HOD KOSTKAMA S ASCII ---
+
+import random
+
+while True:
+    possible_actions = ["┌─────────┐\n│         │\n│    ●    │\n│         │\n└─────────┘\n",
+                        "┌─────────┐\n│  ●      │\n│         │\n│      ●  │\n└─────────┘\n",
+                        "┌─────────┐\n│  ●      │\n│    ●    │\n│      ●  │\n└─────────┘\n",
+                        "┌─────────┐\n│  ●   ●  │\n│         │\n│  ●   ●  │\n└─────────┘\n",
+                        "┌─────────┐\n│  ●   ●  │\n│    ●    │\n│  ●   ●  │\n└─────────┘\n",
+                        "┌─────────┐\n│  ●   ●  │\n│  ●   ●  │\n│  ●   ●  │\n└─────────┘\n"]
+
+    nahodne_cislo1 = random.choice(possible_actions)
+    nahodne_cislo2 = random.choice(possible_actions)
+    nahodne_cislo3 = random.choice(possible_actions)
+    nahodne_cislo4 = random.choice(possible_actions)
+    nahodne_cislo5 = random.choice(possible_actions)
+    nahodne_cislo6 = random.choice(possible_actions)
+
+    kostky = input("Kolika kostky chceš házet? (1-6): ")
+
+    if kostky == "1":
+        print(f"{nahodne_cislo1}")
+    if kostky == "2":
+        print(f"{nahodne_cislo1}{nahodne_cislo2}")
+    if kostky == "3":
+        print(f"{nahodne_cislo1}{nahodne_cislo2}{nahodne_cislo3}")
+    if kostky == "4":
+        print(f"{nahodne_cislo1}{nahodne_cislo2}{nahodne_cislo3}{nahodne_cislo4}")
+    if kostky == "5":
+        print(f"{nahodne_cislo1}{nahodne_cislo2}{nahodne_cislo3}{nahodne_cislo4}{nahodne_cislo5}")
+    if kostky == "6":
+        print(f"{nahodne_cislo1}{nahodne_cislo2}{nahodne_cislo3}{nahodne_cislo4}{nahodne_cislo5}{nahodne_cislo6}")
