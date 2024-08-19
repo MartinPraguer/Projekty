@@ -1,0 +1,104 @@
+### 28 (28.A) --- PEXESO 3x3 - hledání trojice (blbuvzdorné) ---
+
+import random
+
+# Vytvoření herního pole 3x3
+karty = ['A', 'A', 'A', 'B', 'B', 'B', 'C', 'C', 'C']
+random.shuffle(karty)
+herni_pole = [karty[:3], karty[3:6], karty[6:]]
+
+# Vytvoření herního pole pro zobrazení hráči
+herni_pole_zobraz = [['?' for _ in range(3)] for _ in range(3)]
+
+# Funkce pro výpis herního pole
+def vypis_herni_pole(pole):
+    for radek in pole:
+        print(" ".join(radek))
+
+# Funkce pro kontrolu, zda jsou všechny karty odhaleny
+def vsechny_odhalene(pole):
+    for radek in pole:
+        if '?' in radek:
+            return False
+    return True
+
+# Hlavní herní smyčka
+while not vsechny_odhalene(herni_pole_zobraz):
+    # Výpis herního pole pro hráče
+    print("\nHerní pole:")
+    vypis_herni_pole(herni_pole_zobraz)
+
+    # Hráč vybírá první kartu
+    while True:
+        vstup1 = input("První karta: Zadej řádek a sloupec oddelený mezerou: ")
+        try:
+            radek1, sloupec1 = map(int, vstup1.split())
+            if 0 <= radek1 <= 2 and 0 <= sloupec1 <= 2:
+                if herni_pole_zobraz[radek1][sloupec1] == '?':
+                    karta1 = herni_pole[radek1][sloupec1]
+                    herni_pole_zobraz[radek1][sloupec1] = karta1
+                    break
+                else:
+                    print("Tato karta je již otočená.\n")
+            else:
+                print("Zadali jste neplatné číslo řádku nebo sloupce.\n")
+        except ValueError:
+            print("Zadejte dvě čísla 0-2 oddělená mezerou.\n")
+
+    # Výpis herního pole pro hráče po otočení první karty
+    print("\nHerní pole po otočení první karty:")
+    vypis_herni_pole(herni_pole_zobraz)
+
+    # Hráč vybírá druhou kartu
+    while True:
+        vstup2 = input("Druhá karta: Zadej řádek a sloupec oddelený mezerou: ")
+        try:
+            radek2, sloupec2 = map(int, vstup2.split())
+            if 0 <= radek2 <= 2 and 0 <= sloupec2 <= 2:
+                if herni_pole_zobraz[radek2][sloupec2] == '?':
+                    karta2 = herni_pole[radek2][sloupec2]
+                    herni_pole_zobraz[radek2][sloupec2] = karta2
+                    break
+                else:
+                    print("Tato karta je již otočená.\n")
+            else:
+                print("Zadali jste neplatné číslo řádku nebo sloupce.\n")
+        except ValueError:
+            print("Zadejte dvě čísla 0-2 oddělená mezerou.\n")
+
+    # Výpis herního pole pro hráče po otočení druhé karty
+    print("\nHerní pole po otočení druhé karty:")
+    vypis_herni_pole(herni_pole_zobraz)
+
+    # Hráč vybírá třetí kartu
+    while True:
+        vstup3 = input("Třetí karta: Zadej řádek a sloupec oddelený mezerou: ")
+        try:
+            radek3, sloupec3 = map(int, vstup3.split())
+            if 0 <= radek3 <= 2 and 0 <= sloupec3 <= 2:
+                if herni_pole_zobraz[radek3][sloupec3] == '?':
+                    karta3 = herni_pole[radek3][sloupec3]
+                    herni_pole_zobraz[radek3][sloupec3] = karta3
+                    break
+                else:
+                    print("Tato karta je již otočená.\n")
+            else:
+                print("Zadali jste neplatné číslo řádku nebo sloupce.\n")
+        except ValueError:
+            print("Zadejte dvě čísla 0-2 oddělená mezerou.\n")
+
+    # Výpis herního pole pro hráče po otočení třetí karty
+    print("\nHerní pole po otočení třetí karty:")
+    vypis_herni_pole(herni_pole_zobraz)
+
+    # Kontrola, zda hráč uhodl trojici
+    if karta1 == karta2 == karta3:
+        print("Gratulujeme, uhodl jsi trojici!")
+    else:
+        print("Nehodl jsi trojici. Karty se obrátily zpět.")
+        herni_pole_zobraz[radek1][sloupec1] = '?'
+        herni_pole_zobraz[radek2][sloupec2] = '?'
+        herni_pole_zobraz[radek3][sloupec3] = '?'
+
+# Konec hry
+print("Vyhrál jsi!")
