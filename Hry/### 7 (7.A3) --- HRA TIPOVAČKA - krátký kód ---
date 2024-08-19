@@ -1,0 +1,21 @@
+### 7 (7.A3) --- HRA TIPOVAČKA - krátký kód ---
+
+import random
+
+print("--- HRA TIPOVAČKA ---\nUhodni číslo, které padne.\n\nMáš 5 životů,\nza každé neuhodnutí\npřicházíš o život.\n")
+
+zivotu = 5
+level = 1
+
+while zivotu > 0:
+    uzivatelsky = int(input(f"{level}. level - Zadej číslo od 1-{level + 1}: "))
+    pc = random.randint(1, level + 1)
+    if uzivatelsky == pc:
+        print(f"Padlo {pc}, trefil jsi, gratuluji!\nMáš {zivotu} životy.\n")
+        level += 1
+    else:
+        zivotu -= 1
+        print(f"Padlo {pc}, netrefil jsi, přicházíš o život.\nMáš {zivotu} životy.\n")
+        if zivotu == 0:
+            print("KONEC")
+            break
