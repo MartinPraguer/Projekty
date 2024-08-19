@@ -1,0 +1,35 @@
+### 010 (10.B1) --- POROVNÁNÍ 3 ZADANÝCH ČÍSEL - čistý kód ---
+
+number1 = int(input("Prosím vlož první číslo: "))
+number2 = int(input("Prosím vlož druhé číslo: "))
+number3 = int(input("Prosím vlož třetí číslo: "))
+print("")
+
+if number1 > number2 > number3:
+    print(f"{number1} je největší, {number2} je menší, {number3} je nejmenší.")
+elif number3 > number2 > number1:
+    print(f"{number3} je největší, {number2} je menší, {number1} je nejmenší.")
+elif number2 > number3 > number1:
+    print(f"{number2} je největší, {number3} je menší, {number1} je nejmenší.")
+elif number2 > number1 > number3:
+    print(f"{number2} je největší, {number1} je menší, {number3} je nejmenší.")
+elif number1 > number3 > number2:
+    print(f"{number1} je největší, {number3} je menší, {number2} je nejmenší.")
+elif number3 > number1 > number2:
+    print(f"{number3} je největší, {number1} je menší, {number2} je nejmenší.")
+
+elif number1 == number2 > number3:
+    print(f"{number1} je shodné s {number2} a jsou větší než {number3}.")
+elif number1 == number2 < number3:
+    print(f"{number1} je shodné s {number2} a jsou menší než {number3}.")
+elif number1 == number3 > number2:
+    print(f"{number1} je shodné s {number3} a jsou větší než {number2}.")
+elif number1 == number3 < number2:
+    print(f"{number1} je shodné s {number3} a jsou menší než {number2}.")
+elif number2 == number3 > number1:
+    print(f"{number2} je shodné s {number3} a jsou větší než {number1}.")
+elif number2 == number3 < number1:
+    print(f"{number2} je shodné s {number3} a jsou menší než {number1}.")
+
+else:
+  print("Všechny tři jsou stejně velké!")
