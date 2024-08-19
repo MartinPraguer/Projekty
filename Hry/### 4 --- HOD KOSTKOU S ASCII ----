@@ -1,0 +1,58 @@
+### 4 --- HOD KOSTKOU S ASCII ----
+
+import random
+
+while True:
+    input ('Házej, zmáčkni ENTER: ')
+    kostka = random.randint(1, 6)
+    kostka == 1 and print('┌─────────┐\n│         │\n│    ●    │\n│         │\n└─────────┘\nPosuň se o 1 políčko.\n\n')
+    kostka == 2 and print('┌─────────┐\n│  ●      │\n│         │\n│      ●  │\n└─────────┘\nPosuň se o 2 políčka.\n\n')
+    kostka == 3 and print('┌─────────┐\n│  ●      │\n│    ●    │\n│      ●  │\n└─────────┘\nPosuň se o 3 políčka.\n\n')
+    kostka == 4 and print('┌─────────┐\n│  ●   ●  │\n│         │\n│  ●   ●  │\n└─────────┘\nPosuň se o 4 políčka.\n\n')
+    kostka == 5 and print('┌─────────┐\n│  ●   ●  │\n│    ●    │\n│  ●   ●  │\n└─────────┘\nPosuň se o 5 políček.\n\n')
+    if kostka == 6:
+        input('┌─────────┐\n│  ●   ●  │\n│  ●   ●  │\n│  ●   ●  │\n└─────────┘\nGratuluji, padla 6. Házej stiskem klávesy ENTER znova: ')
+        kostka += random.randint(1, 6)
+        kostka0 = kostka - 6
+        if kostka == 12:
+            input('┌─────────┐\n│  ●   ●  │\n│  ●   ●  │\n│  ●   ●  │\n└─────────┘\nGratuluji, padla podruhé 6. Házej stiskem klávesy ENTER znova: ')
+            kostka += random.randint(1, 6)
+            kostka0 = kostka - 12
+            if kostka == 18:
+                input('┌─────────┐\n│  ●   ●  │\n│  ●   ●  │\n│  ●   ●  │\n└─────────┘\nGratuluji, padla potřetí 6. Házej stiskem klávesy ENTER znova: ')
+                kostka += random.randint(1, 6)
+                kostka0 = kostka - 18
+                if kostka == 24:
+                    input('┌─────────┐\n│  ●   ●  │\n│  ●   ●  │\n│  ●   ●  │\n└─────────┘\nGratuluji, padla počtvrté 6. Házej stiskem klávesy ENTER znova: ')
+                    kostka += random.randint(1, 6)
+                    kostka0 = kostka - 24
+                    if kostka == 30:
+                        input('┌─────────┐\n│  ●   ●  │\n│  ●   ●  │\n│  ●   ●  │\n└─────────┘\nGratuluji, padla popáté 6. Házej stiskem klávesy ENTER znova: ')
+                        kostka += random.randint(1, 6)
+                        kostka0 = kostka - 30
+                        if kostka == 36:
+                            input('┌─────────┐\n│  ●   ●  │\n│  ●   ●  │\n│  ●   ●  │\n└─────────┘\nGratuluji, padla pošesté 6. Házej stiskem klávesy ENTER znova: ')
+                            kostka += random.randint(1, 6)
+                            kostka0 = kostka - 36
+                            if kostka == 42:
+                                input('┌─────────┐\n│  ●   ●  │\n│  ●   ●  │\n│  ●   ●  │\n└─────────┘\nGratuluji, padla posedmé 6. Házej stiskem klávesy ENTER znova: ')
+                                kostka += random.randint(1, 6)
+                                kostka0 = kostka - -42
+                                if kostka == 48:
+                                    input('┌─────────┐\n│  ●   ●  │\n│  ●   ●  │\n│  ●   ●  │\n└─────────┘\nGratuluji, padla poosmé 6. Házej stiskem klávesy ENTER znova: ')
+                                    kostka += random.randint(1, 6)
+                                    kostka0 = kostka - 48
+                                    if kostka == 54:
+                                        input('┌─────────┐\n│  ●   ●  │\n│  ●   ●  │\n│  ●   ●  │\n└─────────┘\nGratuluji, padla podeváté 6. Házej stiskem klávesy ENTER znova: ')
+                                        kostka += random.randint(1, 6)
+                                        kostka0 = kostka - 54
+                                        if kostka == 60:
+                                            input('┌─────────┐\n│  ●   ●  │\n│  ●   ●  │\n│  ●   ●  │\n└─────────┘\nGratuluji, padla podesáté 6. Házej stiskem klávesy ENTER znova: ')
+                                            kostka += random.randint(1, 6)
+                                            kostka0 = kostka - 60
+        kostka0 == 1 and print('┌─────────┐\n│         │\n│    ●    │\n│         │\n└─────────┘')
+        kostka0 == 2 and print('┌─────────┐\n│  ●      │\n│         │\n│      ●  │\n└─────────┘')
+        kostka0 == 3 and print('┌─────────┐\n│  ●      │\n│    ●    │\n│      ●  │\n└─────────┘')
+        kostka0 == 4 and print('┌─────────┐\n│  ●   ●  │\n│         │\n│  ●   ●  │\n└─────────┘')
+        kostka0 == 5 and print('┌─────────┐\n│  ●   ●  │\n│    ●    │\n│  ●   ●  │\n└─────────┘')
+        print(f'Celkem se posuň o {kostka} políček.\n\n')
