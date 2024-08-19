@@ -1,0 +1,31 @@
+### 14 --- GENERÁTOR NÁHODNÝCH SLOV V NÁHODNÝ ČAS ---
+
+# from threading import Timer
+# import random
+
+def scheduled_task(word):
+    print(f"Náhodné slovo je {word}")
+    run_scheduled_task()
+
+def run_scheduled_task():
+    random_time = random.randint(10, 10)
+    random_word = random.choice(possible_words)
+    timer = Timer(random_time, scheduled_task, [random_word])
+    timer.start()
+
+possible_words = ["kabát", "lupa", "magazín", "krápník", "recenze", "lyže", "kosa", "vojsko", "kyselina", "kino", "hromada", "pohoda"]
+
+start_word = random.choice(possible_words)
+
+user_input = input("Pro spuštění napiš 'start', pro ukončení 'exit': ")
+
+
+if user_input.lower() == 'start':
+    print(f"{start_word}")
+    run_scheduled_task()
+
+while True:
+    user_input = input("Napiš něco (exit pro ukončení): ")
+    if user_input.lower() == 'exit':
+        print('Ukončuji...')
+        break
