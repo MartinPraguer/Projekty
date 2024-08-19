@@ -1,0 +1,48 @@
+### 3 (3.A) --- HOD KOSTKOU ---
+
+import random
+
+while True:
+    input ('Házej, zmáčkni ENTER: ')
+    kostka = random.randint(1, 6)
+    if kostka == 1:
+        print(f'Posuň se o 1 políčko.\n\n')
+    if kostka == 2:
+        print(f'Posuň se o 2 políčka.\n\n')
+    if kostka == 3:
+        print(f'Posuň se o 3 políčka.\n\n')
+    if kostka == 4:
+        print(f'Posuň se o 4 políčka.\n\n')
+    if kostka == 5:
+        print(f'Posuň se o 5 políček.\n\n')
+    if kostka == 6:
+        input('Gratuluji, padla 6. Házej stiskem klávesy ENTER znova: ')
+        kostka += random.randint(1, 6)
+        if kostka == 12:
+            input('Gratuluji, padla podruhé 6. Házej stiskem klávesy ENTER znova: ')
+            kostka += random.randint(1, 6)
+            if kostka == 18:
+                input('Gratuluji, padla potřetí 6. Házej stiskem klávesy ENTER znova: ')
+                kostka += random.randint(1, 6)
+                if kostka == 24:
+                    input('Gratuluji, padla počtvrté 6. Házej stiskem klávesy ENTER znova: ')
+                    kostka += random.randint(1, 6)
+                    if kostka == 30:
+                        input('Gratuluji, padla popáté 6. Házej stiskem klávesy ENTER znova: ')
+                        kostka += random.randint(1, 6)
+                        if kostka == 36:
+                            input('Gratuluji, padla pošesté 6. Házej stiskem klávesy ENTER znova: ')
+                            kostka += random.randint(1, 6)
+                            if kostka == 42:
+                                input('Gratuluji, padla posedmé 6. Házej stiskem klávesy ENTER znova: ')
+                                kostka += random.randint(1, 6)
+                                if kostka == 48:
+                                    input('Gratuluji, padla poosmé 6. Házej stiskem klávesy ENTER znova: ')
+                                    kostka += random.randint(1, 6)
+                                    if kostka == 54:
+                                        input('Gratuluji, padla podeváté 6. Házej stiskem klávesy ENTER znova: ')
+                                        kostka += random.randint(1, 6)
+                                        if kostka == 60:
+                                            input('Gratuluji, padla podesáté 6. Házej stiskem klávesy ENTER znova: ')
+                                            kostka += random.randint(1, 6)
+        print(f'Celkem se posuň o {kostka} políček.\n\n')
