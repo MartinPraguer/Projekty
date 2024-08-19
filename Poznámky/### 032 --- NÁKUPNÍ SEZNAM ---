@@ -1,0 +1,28 @@
+### 032 --- NÁKUPNÍ SEZNAM ---
+
+potraviny = {}
+
+print("Vlož položku nebo položku a její množství oddělené mezerou. CTRL+D ukonči nákup:")
+
+while True:
+    try:
+        artikl = input()
+        if not artikl:
+            break
+        if " " in artikl:
+            polozka, mnozstvi = artikl.split()
+            mnozstvi = int(mnozstvi)
+        else:
+            polozka = artikl
+            mnozstvi = 1
+        if polozka in potraviny:
+            potraviny[polozka] += mnozstvi
+        else:
+            potraviny[polozka] = mnozstvi
+    except ValueError:
+        print("Nesprávný formát. Zadejte položku nebo položku a její množství oddělené mezerou.")
+        print()
+    except EOFError:
+        for polozka, mnozstvi in sorted(potraviny.items()):
+            print(polozka.upper(), mnozstvi)
+        break
