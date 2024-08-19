@@ -1,0 +1,76 @@
+### 2 --- KÁMEN, NŮŽKY, PAPÍR ---
+
+import random
+
+pc_score = 0
+tvoje_score = 0
+
+print(f"--- NOVÁ HRA ---")
+print(f"Hraješ na 3 vítězství.")
+
+while True:
+
+    tvuj_tah = input("\nZadej kámen, nůžky nebo papír: ")
+
+    possible_actions = ["kámen", "nůžky", "papír"]
+    pc_tah = random.choice(possible_actions)
+    print(f"\nTy jsi zvolil {tvuj_tah}, počítač zvolil {pc_tah}.")
+
+    if tvuj_tah == pc_tah:
+        print(f"Oba jste zvolili {tvuj_tah}. REMÍZA! :|")
+
+
+    elif tvuj_tah == "kámen":
+        if pc_tah == "nůžky":
+            print("Kámen tupí nůžky! VÝHRA! :)")
+            tvoje_score += 1
+        else:
+            print("Papír balí kámen! PROHRA. :(")
+            pc_score += 1
+
+    elif tvuj_tah == "papír":
+        if pc_tah == "kámen":
+            print("Papír balí kámen! VÝHRA! :)")
+            tvoje_score += 1
+        else:
+            print("Nůžky stříhají papír! PROHRA. :(")
+            pc_score += 1
+
+    elif tvuj_tah == "nůžky":
+        if pc_tah == "papír":
+            print("Nůžky stříhají papír! VÝHRA! :)")
+            tvoje_score += 1
+        else:
+            print("Kámen tupí nůžky! PROHRA. :(")
+            pc_score += 1
+
+    if tvoje_score == pc_score:
+        print(f"Nikdo nevede. Score: {tvoje_score}:{pc_score}.")
+    if tvoje_score > pc_score:
+        print(f"Vyhráváš, {tvoje_score}:{pc_score} pro tebe.")
+    if tvoje_score < pc_score:
+        print(f"Prohráváš, {tvoje_score}:{pc_score} pro počítač.")
+
+    if tvoje_score == 3:
+        print(f"\nVyhrál jsi! Finální score: {tvoje_score}:{pc_score}.\n")
+        hrat_znovu = input("Chceš hrát znovu? (ano/ne): ")
+        if hrat_znovu == "ano":
+            pc_score = 0
+            tvoje_score = 0
+            print(f"\n\n--- NOVÁ HRA ---")
+            print(f"Hraješ na 3 vítězství.\n")
+        else:
+            print(f"Díky za hru.")
+            break
+
+    if pc_score == 3:
+        print(f"\nVyhrál počítač! Finální score: {tvoje_score}:{pc_score}.\n")
+        hrat_znovu = input("Chceš hrát znovu? (ano/ne): ")
+        if hrat_znovu == "ano":
+            pc_score = 0
+            tvoje_score = 0
+            print(f"\n\n--- NOVÁ HRA ---")
+            print(f"Hraješ na 3 vítězství.\n")
+        else:
+            print(f"Díky za hru.")
+            break
