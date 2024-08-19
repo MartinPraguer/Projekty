@@ -1,0 +1,33 @@
+### 012 --- CO2 SENSOR ---
+
+from IPython.display import Audio
+import numpy as np
+
+def play_audio():
+    duration = 10  # Délka pípání v sekundách
+    sample_rate = 44100  # Vzorkovací frekvence
+    t = np.linspace(0, duration, int(sample_rate * duration))
+    audio_data = np.sin(2 * np.pi * 440 * t)  # Generování signálu (440 Hz pro pípání)
+
+    return display(Audio(audio_data, rate=sample_rate, autoplay=True))  # Vrátí objekt Audio
+
+while True:
+
+    namerena_hodnota = int(input("Zadej naměřenou hodnotu: "))
+
+    if 0 < namerena_hodnota <= 399:
+        print("\033[92m" + "Hodnota je v pořádku. Displej ukazuje 400 PPM a svítí zeleně." + "\033[0m")
+
+    if 400 <= namerena_hodnota < 1000:
+        print("\033[92m" + f"Hodnota CO2 je v pořádku. Displej ukazuje {namerena_hodnota} PPM a svítí zeleně." + "\033[0m")
+
+    if 1000 <= namerena_hodnota < 3000:
+        print("\033[38;5;208m" + f"Hodnota CO2 je zvýšená. Displej ukazuje {namerena_hodnota} PPM a svítí oranžově." + "\033[0m")
+
+    if 3000 <= namerena_hodnota <= 5000:
+        print("\033[91m" + f"Hodnota CO2 je vysoká! Displej ukazuje {namerena_hodnota} PPM, svítí červeně a měřič pípá." + "\033[0m")
+        play_audio()  # Zde se zavolá funkce pro přehrání zvuku
+
+    if namerena_hodnota > 5000:
+        print("\033[91m" + f"Hodnota CO2 je velmi vysoká! Displej ukazuje 5000 PPM, svítí červeně a měřič pípá." + "\033[0m")
+        play_audio()  # Zde se zavolá funkce pro přehrání zvuku
