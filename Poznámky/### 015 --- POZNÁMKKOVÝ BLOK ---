@@ -1,0 +1,16 @@
+### 015 --- POZNÁMKKOVÝ BLOK ---
+
+# Cesta k adresáři na ploše
+cesta_k_adresari = 'c://Users/PraguerNTBK/Desktop/Python/poznamkovy_blok/'  # Uprav cestu podle svého adresáře na ploše
+
+# Obsah textového souboru
+obsah = 'Toto je obsah, který bude zapsán do souboru.'
+
+# Název souboru
+nazev_souboru = 'poznámkový blok.txt'
+
+# Vytvoření textového souboru a zápis obsahu
+with open(cesta_k_adresari + nazev_souboru, 'w') as soubor:
+    soubor.write(obsah)
+
+print(f"Soubor {nazev_souboru} byl vytvořen v adresáři na ploše.")
