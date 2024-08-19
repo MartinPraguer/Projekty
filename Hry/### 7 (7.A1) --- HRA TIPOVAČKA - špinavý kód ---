@@ -1,0 +1,300 @@
+### 7 (7.A1) --- HRA TIPOVAČKA - špinavý kód ---
+
+import random
+
+print("--- HRA TIPOVAČKA ---\nUhodni číslo, které padne.\n\nMáš 5 životů,\nza každé neuhodnutí\npřicházíš o život.\n")
+
+
+zivotu = 5
+
+
+while True:
+
+    prvni_uzivatelsky = int(input("1. level - Zadej číslo od 1-2: "))
+    prvni_pc = random.randint(1, 2)
+
+    if prvni_uzivatelsky == prvni_pc:
+        print(f"Padlo {prvni_pc}, trefil jsi, gratuluji!\nMáš {zivotu} životy.\n")
+
+    else:
+        zivotu -= 1
+        print(f"Padlo {prvni_pc}, netrefil jsi, přicházíš o život.\nMáš {zivotu} životy.\n")
+        if zivotu == 0:
+            break
+
+
+    if prvni_uzivatelsky == prvni_pc:
+        druhy_uzivatelsky = int(input("2. level - Zadej číslo od 1-3: "))
+        druhy_pc = random.randint(1, 3)
+
+        if druhy_uzivatelsky == druhy_pc:
+            print(f"Padlo {druhy_pc}, trefil jsi, gratuluji!\nMáš {zivotu} životy.\n")
+
+        else:
+            zivotu -= 1
+            print(f"Padlo {druhy_pc}, netrefil jsi, přicházíš o život.\nMáš {zivotu} životy.\n")
+            if zivotu == 0:
+                break
+
+
+            if prvni_uzivatelsky == prvni_pc:
+                druhy_uzivatelsky = int(input("2. level - Zadej číslo od 1-3: "))
+                druhy_pc = random.randint(1, 3)
+
+                if druhy_uzivatelsky == druhy_pc:
+                    print(f"Padlo {druhy_pc}, trefil jsi, gratuluji!\nMáš {zivotu} životy.\n")
+
+                else:
+                    zivotu -= 1
+                    print(f"Padlo {druhy_pc}, netrefil jsi, přicházíš o život.\nMáš {zivotu} životy.\n")
+                    if zivotu == 0:
+                        break
+
+
+                    if prvni_uzivatelsky == prvni_pc:
+                        druhy_uzivatelsky = int(input("2. level - Zadej číslo od 1-3: "))
+                        druhy_pc = random.randint(1, 3)
+
+                        if druhy_uzivatelsky == druhy_pc:
+                            print(f"Padlo {druhy_pc}, trefil jsi, gratuluji!\nMáš {zivotu} životy.\n")
+
+                        else:
+                            zivotu -= 1
+                            print(f"Padlo {druhy_pc}, netrefil jsi, přicházíš o život.\nMáš {zivotu} životy.\n")
+                            if zivotu == 0:
+                                break
+
+
+                            if prvni_uzivatelsky == prvni_pc:
+                                druhy_uzivatelsky = int(input("2. level - Zadej číslo od 1-3: "))
+                                druhy_pc = random.randint(1, 3)
+
+                                if druhy_uzivatelsky == druhy_pc:
+                                    print(f"Padlo {druhy_pc}, trefil jsi, gratuluji!\nMáš {zivotu} životy.\n")
+
+                                else:
+                                    zivotu -= 1
+                                    print(f"Padlo {druhy_pc}, netrefil jsi, přicházíš o život.\nMáš {zivotu} životy.\n")
+                                    if zivotu == 0:
+                                        break
+
+
+                                    if prvni_uzivatelsky == prvni_pc:
+                                        druhy_uzivatelsky = int(input("2. level - Zadej číslo od 1-3: "))
+                                        druhy_pc = random.randint(1, 3)
+
+                                        if druhy_uzivatelsky == druhy_pc:
+                                            print(f"Padlo {druhy_pc}, trefil jsi, gratuluji!\nMáš {zivotu} životy.\n")
+
+                                        else:
+                                            zivotu -= 1
+                                            print(f"Padlo {druhy_pc}, netrefil jsi, přicházíš o život.\nMáš {zivotu} životy.\n")
+                                            if zivotu == 0:
+                                                break
+
+    if prvni_uzivatelsky == prvni_pc and druhy_uzivatelsky == druhy_pc:
+        treti_uzivatelsky = int(input("3. level - Zadej číslo od 1-4: "))
+        treti_pc = random.randint(1, 4)
+
+        if treti_uzivatelsky == treti_pc:
+            print(f"Padlo {treti_pc}, trefil jsi, gratuluji!\nMáš {zivotu} životy.\n")
+
+        else:
+            zivotu -= 1
+            print(f"Padlo {treti_pc}, netrefil jsi, přicházíš o život.\nMáš {zivotu} životy.\n")
+            if zivotu == 0:
+                break
+
+
+            if prvni_uzivatelsky == prvni_pc and druhy_uzivatelsky == druhy_pc:
+                treti_uzivatelsky = int(input("3. level - Zadej číslo od 1-4: "))
+                treti_pc = random.randint(1, 4)
+
+                if treti_uzivatelsky == treti_pc:
+                    print(f"Padlo {treti_pc}, trefil jsi, gratuluji!\nMáš {zivotu} životy.\n")
+
+                else:
+                    zivotu -= 1
+                    print(f"Padlo {treti_pc}, netrefil jsi, přicházíš o život.\nMáš {zivotu} životy.\n")
+                    if zivotu == 0:
+                        break
+
+
+                    if prvni_uzivatelsky == prvni_pc and druhy_uzivatelsky == druhy_pc:
+                        treti_uzivatelsky = int(input("3. level - Zadej číslo od 1-4: "))
+                        treti_pc = random.randint(1, 4)
+
+                        if treti_uzivatelsky == treti_pc:
+                            print(f"Padlo {treti_pc}, trefil jsi, gratuluji!\nMáš {zivotu} životy.\n")
+
+                        else:
+                            zivotu -= 1
+                            print(f"Padlo {treti_pc}, netrefil jsi, přicházíš o život.\nMáš {zivotu} životy.\n")
+                            if zivotu == 0:
+                                break
+
+
+                            if prvni_uzivatelsky == prvni_pc and druhy_uzivatelsky == druhy_pc:
+                                treti_uzivatelsky = int(input("3. level - Zadej číslo od 1-4: "))
+                                treti_pc = random.randint(1, 4)
+
+                                if treti_uzivatelsky == treti_pc:
+                                    print(f"Padlo {treti_pc}, trefil jsi, gratuluji!\nMáš {zivotu} životy.\n")
+
+                                else:
+                                    zivotu -= 1
+                                    print(f"Padlo {treti_pc}, netrefil jsi, přicházíš o život.\nMáš {zivotu} životy.\n")
+                                    if zivotu == 0:
+                                        break
+
+
+                                    if prvni_uzivatelsky == prvni_pc and druhy_uzivatelsky == druhy_pc:
+                                        treti_uzivatelsky = int(input("3. level - Zadej číslo od 1-4: "))
+                                        treti_pc = random.randint(1, 4)
+
+                                        if treti_uzivatelsky == treti_pc:
+                                            print(f"Padlo {treti_pc}, trefil jsi, gratuluji!\nMáš {zivotu} životy.\n")
+
+                                        else:
+                                            zivotu -= 1
+                                            print(f"Padlo {treti_pc}, netrefil jsi, přicházíš o život.\nMáš {zivotu} životy.\n")
+                                            if zivotu == 0:
+                                                break
+
+    if prvni_uzivatelsky == prvni_pc and druhy_uzivatelsky == druhy_pc and treti_uzivatelsky == treti_pc:
+        ctvrty_uzivatelsky = int(input("4. level - Zadej číslo od 1-5: "))
+        ctvrty_pc = random.randint(1, 5)
+
+        if ctvrty_uzivatelsky == ctvrty_pc:
+            print(f"Padlo {ctvrty_pc}, trefil jsi, gratuluji!\nMáš {zivotu} životy.\n")
+
+        else:
+            zivotu -= 1
+            print(f"Padlo {ctvrty_pc}, netrefil jsi, přicházíš o život.\nMáš {zivotu} životy.\n")
+            if zivotu == 0:
+                break
+
+
+            if prvni_uzivatelsky == prvni_pc and druhy_uzivatelsky == druhy_pc and treti_uzivatelsky == treti_pc:
+                ctvrty_uzivatelsky = int(input("4. level - Zadej číslo od 1-5: "))
+                ctvrty_pc = random.randint(1, 5)
+
+                if ctvrty_uzivatelsky == ctvrty_pc:
+                    print(f"Padlo {ctvrty_pc}, trefil jsi, gratuluji!\nMáš {zivotu} životy.\n")
+
+                else:
+                    zivotu -= 1
+                    print(f"Padlo {ctvrty_pc}, netrefil jsi, přicházíš o život.\nMáš {zivotu} životy.\n")
+                    if zivotu == 0:
+                        break
+
+
+                    if prvni_uzivatelsky == prvni_pc and druhy_uzivatelsky == druhy_pc and treti_uzivatelsky == treti_pc:
+                        ctvrty_uzivatelsky = int(input("4. level - Zadej číslo od 1-5: "))
+                        ctvrty_pc = random.randint(1, 5)
+
+                        if ctvrty_uzivatelsky == ctvrty_pc:
+                            print(f"Padlo {ctvrty_pc}, trefil jsi, gratuluji!\nMáš {zivotu} životy.\n")
+
+                        else:
+                            zivotu -= 1
+                            print(f"Padlo {ctvrty_pc}, netrefil jsi, přicházíš o život.\nMáš {zivotu} životy.\n")
+                            if zivotu == 0:
+                                break
+
+                            if prvni_uzivatelsky == prvni_pc and druhy_uzivatelsky == druhy_pc and treti_uzivatelsky == treti_pc:
+                                ctvrty_uzivatelsky = int(input("4. level - Zadej číslo od 1-5: "))
+                                ctvrty_pc = random.randint(1, 5)
+
+                                if ctvrty_uzivatelsky == ctvrty_pc:
+                                    print(f"Padlo {ctvrty_pc}, trefil jsi, gratuluji!\nMáš {zivotu} životy.\n")
+
+                                else:
+                                    zivotu -= 1
+                                    print(f"Padlo {ctvrty_pc}, netrefil jsi, přicházíš o život.\nMáš {zivotu} životy.\n")
+                                    if zivotu == 0:
+                                        break
+
+
+                                    if prvni_uzivatelsky == prvni_pc and druhy_uzivatelsky == druhy_pc and treti_uzivatelsky == treti_pc:
+                                        ctvrty_uzivatelsky = int(input("4. level - Zadej číslo od 1-5: "))
+                                        ctvrty_pc = random.randint(1, 5)
+
+                                        if ctvrty_uzivatelsky == ctvrty_pc:
+                                            print(f"Padlo {ctvrty_pc}, trefil jsi, gratuluji!\nMáš {zivotu} životy.\n")
+
+                                        else:
+                                            zivotu -= 1
+                                            print(f"Padlo {ctvrty_pc}, netrefil jsi, přicházíš o život.\nMáš {zivotu} životy.\n")
+                                            if zivotu == 0:
+                                                break
+
+
+    if prvni_uzivatelsky == prvni_pc and druhy_uzivatelsky == druhy_pc and treti_uzivatelsky == treti_pc and ctvrty_uzivatelsky == ctvrty_pc:
+        paty_uzivatelsky = int(input("5. level - Zadej číslo od 1-6: "))
+        paty_pc = random.randint(1, 6)
+
+        if paty_uzivatelsky == paty_pc:
+            print(f"Padlo {paty_pc}, trefil jsi, gratuluji!\nMáš {zivotu} životy.\n")
+
+        else:
+            zivotu -= 1
+            print(f"Padlo {paty_pc}, netrefil jsi, přicházíš o život.\nMáš {zivotu} životy.\n")
+            if zivotu == 0:
+                break
+
+
+            if prvni_uzivatelsky == prvni_pc and druhy_uzivatelsky == druhy_pc and treti_uzivatelsky == treti_pc and ctvrty_uzivatelsky == ctvrty_pc:
+                paty_uzivatelsky = int(input("5. level - Zadej číslo od 1-6: "))
+                paty_pc = random.randint(1, 6)
+
+                if paty_uzivatelsky == paty_pc:
+                    print(f"Padlo {paty_pc}, trefil jsi, gratuluji!\nMáš {zivotu} životy.\n")
+
+                else:
+                    zivotu -= 1
+                    print(f"Padlo {paty_pc}, netrefil jsi, přicházíš o život.\nMáš {zivotu} životy.\n")
+                    if zivotu == 0:
+                        break
+
+
+                    if prvni_uzivatelsky == prvni_pc and druhy_uzivatelsky == druhy_pc and treti_uzivatelsky == treti_pc and ctvrty_uzivatelsky == ctvrty_pc:
+                        paty_uzivatelsky = int(input("5. level - Zadej číslo od 1-6: "))
+                        paty_pc = random.randint(1, 6)
+
+                        if paty_uzivatelsky == paty_pc:
+                            print(f"Padlo {paty_pc}, trefil jsi, gratuluji!\nMáš {zivotu} životy.\n")
+
+                        else:
+                            zivotu -= 1
+                            print(f"Padlo {paty_pc}, netrefil jsi, přicházíš o život.\nMáš {zivotu} životy.\n")
+                            if zivotu == 0:
+                                break
+
+
+                            if prvni_uzivatelsky == prvni_pc and druhy_uzivatelsky == druhy_pc and treti_uzivatelsky == treti_pc and ctvrty_uzivatelsky == ctvrty_pc:
+                                paty_uzivatelsky = int(input("5. level - Zadej číslo od 1-6: "))
+                                paty_pc = random.randint(1, 6)
+
+                                if paty_uzivatelsky == paty_pc:
+                                    print(f"Padlo {paty_pc}, trefil jsi, gratuluji!\nMáš {zivotu} životy.\n")
+
+                                else:
+                                    zivotu -= 1
+                                    print(f"Padlo {paty_pc}, netrefil jsi, přicházíš o život.\nMáš {zivotu} životy.\n")
+                                    if zivotu == 0:
+                                        break
+
+
+                                    if prvni_uzivatelsky == prvni_pc and druhy_uzivatelsky == druhy_pc and treti_uzivatelsky == treti_pc and ctvrty_uzivatelsky == ctvrty_pc:
+                                        paty_uzivatelsky = int(input("5. level - Zadej číslo od 1-6: "))
+                                        paty_pc = random.randint(1, 6)
+
+                                        if paty_uzivatelsky == paty_pc:
+                                            print(f"Padlo {paty_pc}, trefil jsi, gratuluji!\nMáš {zivotu} životy.\n")
+
+                                        else:
+                                            zivotu -= 1
+                                            print(f"Padlo {paty_pc}, netrefil jsi, přicházíš o život.\nMáš {zivotu} životy.\n")
+                                            if zivotu == 0:
+                                                break
