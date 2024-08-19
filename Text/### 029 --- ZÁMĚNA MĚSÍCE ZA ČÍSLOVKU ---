@@ -1,0 +1,28 @@
+### 029 --- ZÁMĚNA MĚSÍCE ZA ČÍSLOVKU ---
+
+mesic = {"leden" : "I.",
+         "únor" : "II.",
+         "březen" : "III.",
+         "duben" : "IV.",
+         "květen" : "V.",
+         "červen" : "VI.",
+         "červenec" : "VII.",
+         "srpen" : "VIII.",
+         "září" : "IX.",
+         "říjen" : "X.",
+         "listopad" : "XI.",
+         "prosinec" : "XII.",
+}
+
+vstup = input("Napiš větu: ")
+vstup = vstup.lower().replace(".", "")
+vystup = ""
+
+# pomocí apendování:
+for slovo in vstup.split(): # split() = split(" ")
+    if slovo in mesic.keys(): # pokud keys zapomenu, automaticky ho Python přidá
+        vystup += mesic[slovo] + " "
+    else:
+        vystup += slovo + " "
+
+print(vystup)
