@@ -1,0 +1,15 @@
+### 3 (3.B) --- HOD KOSTKOU ---
+
+import random
+
+while True:
+    input("Házej, zmáčkni ENTER: ")
+    kostka = random.randint(1,6)
+    if kostka <= 5:
+        print(f"Posuň se o: {kostka}", end="\n\n")
+    while kostka % 6 == 0:
+        input(f"Padla 6, házej znova!")
+        kostka += random.randint(1,6)
+        if kostka % 6 == 0:
+            continue
+        print(f"Posuň se o: {kostka}", end="\n\n")
