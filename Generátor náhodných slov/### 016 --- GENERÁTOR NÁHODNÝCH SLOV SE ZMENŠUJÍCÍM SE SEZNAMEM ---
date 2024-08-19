@@ -1,0 +1,15 @@
+### 016 --- GENERÁTOR NÁHODNÝCH SLOV SE ZMENŠUJÍCÍM SE SEZNAMEM ---
+
+import random
+
+seznam_slov = ["auto", "letadlo", "autobus", "koloběžka", "kolo"]
+random.shuffle(seznam_slov)
+
+while True:
+    if len(seznam_slov) > 0:
+        print(seznam_slov[0])
+        seznam_slov.pop(0)
+        input()
+
+    else:
+        break
