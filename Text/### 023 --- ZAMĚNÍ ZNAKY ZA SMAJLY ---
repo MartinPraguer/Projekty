@@ -1,0 +1,5 @@
+### 023 --- ZAMĚNÍ ZNAKY ZA SMAJLY ---
+
+text = input()
+text = text.replace(":)", "🙂").replace(":(", "🙁")
+print(text)
