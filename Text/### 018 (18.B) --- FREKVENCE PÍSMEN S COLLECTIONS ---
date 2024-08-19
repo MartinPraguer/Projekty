@@ -1,0 +1,14 @@
+### 018 (18.B) --- FREKVENCE PÍSMEN S COLLECTIONS ---
+
+import collections
+
+print("Pes štěkal na dům.")
+veta_cz = "Pes štěkal na dům."
+veta_cz = veta_cz.lower().replace(".", "").replace(" ", "")
+citac = collections.Counter(veta_cz)
+
+while True:
+    print(citac)
+    citac = input("Zadej vlastní větu: ")
+    citac = citac.lower().replace(".", "").replace(" ", "")
+    citac = collections.Counter(citac)
