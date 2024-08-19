@@ -1,0 +1,19 @@
+### 017 --- CZ-EN SLOVNÍK ---
+
+cz_en = {"pes": "dog",
+         "dům": "house",
+         "štěkal": "barked",
+}
+
+veta_cz = "Pes štěkal na dům."
+veta_cz = veta_cz.lower().replace(".", "")
+veta_en = ""
+
+# pomocí apendování:
+for slovo in veta_cz.split(): # split() = split(" ")
+    if slovo in cz_en.keys(): # pokud keys zapomenu, automaticky ho Python přidá
+        veta_en += cz_en[slovo] + " "
+    else:
+        veta_en += slovo + " "
+
+print(veta_en)
