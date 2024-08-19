@@ -1,0 +1,29 @@
+### 013 --- TRENÉR V PSANÍ PROGRAMÁTORSKÝCH ZNAKŮ DESETI PRSTY ---
+
+import random
+
+programatorske_znaky = [ ";", "°", "+", "=", "%", "/", ")", "(", '"', "§", "!", "¨", "'", ",", "?", ".", ":", "-", "_", '$', "|", "[", "]", "$", "#", "&", "@", "{", "}", "<", ">", "*", "\\", "€", "`", "^", "~"]
+
+while True:
+
+    nahodne_znaky = random.choices(programatorske_znaky, k=69)  # Vybere 69 náhodných znaků
+
+    print("Náhodné znaky jsou:\n", "".join(nahodne_znaky), sep='') # novy_text = text[1:]
+
+    opakuj_radek = input()
+
+    if opakuj_radek == "".join(nahodne_znaky):
+        print("\nMáš to správně.\n")
+        dopsani = input()
+        if dopsani == "retry":
+            continue
+        if dopsani == "end":
+            break
+        
+    else:
+        print("\nNěkde je chyba.\n")
+        dopsani = input()
+        if dopsani == "retry":
+            continue
+        if dopsani == "end":
+            break
