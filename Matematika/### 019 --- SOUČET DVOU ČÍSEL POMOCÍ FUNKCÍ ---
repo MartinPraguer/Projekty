@@ -1,0 +1,54 @@
+### 019 --- SOUČET DVOU ČÍSEL POMOCÍ FUNKCÍ ---
+
+#1. nacti cisla z klavesnice X
+#2. secist zadana cisla
+#3. vytisknou vysledek na obrazovku
+### mezi def jsou 2 řádky volné
+
+from typing import List, Tuple, Set, Dict
+
+
+def nacti_cisla() -> List[int]:
+    """
+    Tato funkce nacte dve cela cisla z klavesnice a vrati je.
+    """
+    while True:
+        vstup = input("Zadej dve cisla oddelena mezerou: ").split()
+        if vstup:
+            try:
+                cisla = list(map(int, vstup))
+                if len(cisla) == 1:
+                    cisla.insert(0, 0)
+                elif len(cisla) == 0:
+                    cisla.insert(0, 0)
+                    cisla.insert(1, 0)
+            except ValueError as err:
+                print("Zadej číslo!")
+                continue
+                #chytra kontrola zda to jsou opravdu cisla (isnumeric())
+            return cisla
+
+
+def secti_cisla(a: int = 0, b: int = 0) -> int:
+    """
+    Tato funkce secte dve zadana cela cisla a vrati vysledek jako cele cislo.
+    """
+    return a + b
+
+
+def vytiskni_vysledek(vysledek: int) -> None:
+    """
+    Tato procedura vytiskne na obrazovku v hezke podobe vysledek.
+    """
+    print(f"Vysledek souctu zadanych cisel je: {vysledek}")
+
+
+def main():
+    while True:
+        cisla = nacti_cisla()
+        vysledek = secti_cisla(a=cisla[0], b=cisla[1])
+        vytiskni_vysledek(vysledek)
+
+
+if __name__ == "__main__":
+    main()
