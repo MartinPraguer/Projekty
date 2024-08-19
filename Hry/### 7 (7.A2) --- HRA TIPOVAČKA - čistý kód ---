@@ -1,0 +1,115 @@
+### 7 (7.A2) --- HRA TIPOVAČKA - čistý kód ---
+
+import random
+
+print("--- HRA TIPOVAČKA ---\nUhodni číslo, které padne.\n\nMáš 5 životů,\nza každé neuhodnutí\npřicházíš o život.\n")
+
+
+zivoty = 5
+
+
+while True:
+
+
+
+
+    while True:
+
+        if zivoty == 0:
+            break
+
+        lvl1_pc = random.randint(1, 2)
+        lvl1_pe = int(input("1. level - Zadej číslo od 1-2: "))
+
+        if lvl1_pc != lvl1_pe:
+            zivoty -= 1
+            print(f"Padlo {lvl1_pc}, netrefil jsi, přicházíš o život.\nMáš {zivoty} životy.\n")
+
+        elif lvl1_pc == lvl1_pe:
+            print(f"Padlo {lvl1_pc}, trefil jsi, gratuluji!\nMáš {zivoty} životy.\n")
+            break
+
+
+    while True:
+
+        if zivoty == 0:
+            break
+
+        lvl2_pc = random.randint(1, 3)
+        lvl2_pe = int(input("2. level - Zadej číslo od 1-3: "))
+
+        if lvl2_pc != lvl2_pe:
+            zivoty -= 1
+            print(f"Padlo {lvl2_pc}, netrefil jsi, přicházíš o život.\nMáš {zivoty} životy.\n")
+
+        elif lvl2_pc == lvl2_pe:
+            print(f"Padlo {lvl2_pc}, trefil jsi, gratuluji!\nMáš {zivoty} životy.\n")
+            break
+
+
+    while True:
+
+        if zivoty == 0:
+            break
+
+        lvl3_pc = random.randint(1, 4)
+        lvl3_pe = int(input("3. level - Zadej číslo od 1-4: "))
+
+        if lvl3_pc != lvl3_pe:
+            zivoty -= 1
+            print(f"Padlo {lvl3_pc}, netrefil jsi, přicházíš o život.\nMáš {zivoty} životy.\n")
+
+        elif lvl3_pc == lvl3_pe:
+            print(f"Padlo {lvl3_pc}, trefil jsi, gratuluji!\nMáš {zivoty} životy.\n")
+            break
+
+
+    while True:
+
+        if zivoty == 0:
+            break
+
+        lvl4_pc = random.randint(1, 5)
+        lvl4_pe = int(input("4. level - Zadej číslo od 1-5: "))
+
+        if lvl4_pc != lvl4_pe:
+            zivoty -= 1
+            print(f"Padlo {lvl4_pc}, netrefil jsi, přicházíš o život.\nMáš {zivoty} životy.\n")
+
+        elif lvl4_pc == lvl4_pe:
+            print(f"Padlo {lvl4_pc}, trefil jsi, gratuluji!\nMáš {zivoty} životy.\n")
+            break
+
+
+    while True:
+
+        if zivoty == 0:
+            break
+
+        lvl5_pc = random.randint(1, 6)
+        lvl5_pe = int(input("5. level - Zadej číslo od 1-6: "))
+
+        if lvl5_pc != lvl5_pe:
+            zivoty -= 1
+            print(f"Padlo {lvl5_pc}, netrefil jsi, přicházíš o život.\nMáš {zivoty} životy.\n")
+
+        elif lvl5_pc == lvl5_pe:
+            print(f"Padlo {lvl5_pc}, trefil jsi, gratuluji!\nMáš {zivoty} životy.\n")
+            break
+
+
+    while True:
+
+        if zivoty == 0:
+            break
+
+        lvl6_pc = random.randint(1, 7)
+        lvl6_pe = int(input("6. level - Zadej číslo od 1-7: "))
+
+        if lvl6_pc != lvl6_pe:
+            zivoty -= 1
+            print(f"Padlo {lvl6_pc}, netrefil jsi, přicházíš o život.\nMáš {zivoty} životy.\n")
+
+        elif lvl6_pc == lvl6_pe:
+            print(f"Padlo {lvl6_pc}, trefil jsi, gratuluji!\nMáš {zivoty} životy.\n")
+            break
