@@ -1,0 +1,71 @@
+### 028 (28.B) --- PEXESO 3x3 - hledání trojice ---
+
+import random
+
+# Vytvoření herního pole 3x3
+karty = ['A', 'A', 'A', 'B', 'B', 'B', 'C', 'C', 'C']
+random.shuffle(karty)
+herni_pole = [karty[:3], karty[3:6], karty[6:]]
+
+# Vytvoření herního pole pro zobrazení hráči
+herni_pole_zobraz = [['?' for _ in range(3)] for _ in range(3)]
+
+# Funkce pro výpis herního pole
+def vypis_herni_pole(pole):
+    for radek in pole:
+        print(" ".join(radek))
+
+# Funkce pro kontrolu, zda jsou všechny karty odhaleny
+def vsechny_odhalene(pole):
+    for radek in pole:
+        if '?' in radek:
+            return False
+    return True
+
+# Hlavní herní smyčka
+while not vsechny_odhalene(herni_pole_zobraz):
+    # Výpis herního pole pro hráče
+    print("\nHerní pole:")
+    vypis_herni_pole(herni_pole_zobraz)
+
+    # Hráč vybírá první kartu
+    vstup1 = input("První karta: Zadej řádek a sloupec oddelený mezerou: ")
+    radek1, sloupec1 = map(int, vstup1.split())
+    karta1 = herni_pole[radek1][sloupec1]
+    herni_pole_zobraz[radek1][sloupec1] = karta1
+
+    # Výpis herního pole pro hráče po otočení první karty
+    print("\nHerní pole po otočení první karty:")
+    vypis_herni_pole(herni_pole_zobraz)
+
+    # Hráč vybírá druhou kartu
+    vstup2 = input("První karta: Zadej řádek a sloupec oddelený mezerou: ")
+    radek2, sloupec2 = map(int, vstup2.split())
+    karta2 = herni_pole[radek2][sloupec2]
+    herni_pole_zobraz[radek2][sloupec2] = karta2
+
+    # Výpis herního pole pro hráče po otočení druhé karty
+    print("\nHerní pole po otočení druhé karty:")
+    vypis_herni_pole(herni_pole_zobraz)
+
+    # Hráč vybírá třetí kartu
+    vstup3 = input("První karta: Zadej řádek a sloupec oddelený mezerou: ")
+    radek3, sloupec3 = map(int, vstup3.split())
+    karta3 = herni_pole[radek3][sloupec3]
+    herni_pole_zobraz[radek3][sloupec3] = karta3
+
+    # Výpis herního pole pro hráče po otočení třetí karty
+    print("\nHerní pole po otočení třetí karty:")
+    vypis_herni_pole(herni_pole_zobraz)
+
+    # Kontrola, zda hráč uhodl trojici
+    if karta1 == karta2 == karta3:
+        print("Gratulujeme, uhodl jsi trojici!")
+    else:
+        print("Nehodl jsi trojici. Karty se obrátily zpět.")
+        herni_pole_zobraz[radek1][sloupec1] = '?'
+        herni_pole_zobraz[radek2][sloupec2] = '?'
+        herni_pole_zobraz[radek3][sloupec3] = '?'
+
+# Konec hry
+print("Vyhrál jsi!")
