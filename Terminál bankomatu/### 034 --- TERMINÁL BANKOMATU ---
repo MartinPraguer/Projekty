@@ -1,0 +1,166 @@
+### 034 --- TERMINÁL BANKOMATU ---
+# (PIN 0000)
+
+import getpass
+import random
+
+pokusy_pin = 3
+pokusy_zmenu_pin = 3
+vybery_zdarma = 4
+pin = "0000"
+zustatek_uctu = random.randint(0,250000) / 100
+
+vloz_kartu = input("VLOŽTE KARTU: ")
+
+vyber_jazyk = input("\nZVOLTE JAZYK\nSELECT LANGUAGE\n\n1 ČESKÝ\n2 ENGLISH\n3 DEUTSCH\n4 FRANÇAIS\n5 ESPAÑOL\n6 РУССКИЙ\n")
+
+if vyber_jazyk == "1":
+
+    while pokusy_pin > 0:
+        vloz_pin = getpass.getpass(prompt='\nZADEJTE VÁŠ PIN\nA STISKNĚTE TLAČÍTKO "ENTER"\n')
+
+        if len(vloz_pin) != 4 or not vloz_pin.isdigit():
+            print("\nPIN MUSÍ OBSAHOVAT 4 ČÍSLICE")
+            if pokusy_pin <= 0:
+                input("\nPROSÍM, ODEBERTE VAŠI KARTU\n")
+                break
+
+        elif len(vloz_pin) == 4 and vloz_pin != pin:
+            vloz_pin = print("\nNESPRÁVNÝ PIN")
+            pokusy_pin -= 1
+            if pokusy_pin <= 0:
+                input("\nPROSÍM, ODEBERTE VAŠI KARTU\n")
+                break
+
+        while vloz_pin == pin:
+                menu = int(input("\n1 VÝBĚR\n2 ZŮSTATEK NA ÚČTU\n3 ZMĚNA PIN\n4 VKLAD\n5 KONEC\n"))
+
+                if menu == 1:
+                    vyber = int(input("\nPROSÍM, ZVOLTE ČÁSTKU\n1  500,- Kč\n2 1000,- Kč\n3 2000,- Kč\n4 3000,- Kč\n5 4000,- Kč\n6 5000,- Kč\n7 6000,- Kč\n8 JINÁ ČÁSTKA\n"))
+                    vyber = int(vyber)
+                    if vyber in range(1,8):
+                        if vyber == 1 and zustatek_uctu >= 500:
+                            input("\nODEBERTE ČÁSTKU\n500 KČ\n")
+                            zustatek_uctu -= 500
+                            vybery_zdarma -= 1
+                            if vybery_zdarma <= 0:
+                                zustatek_uctu -= 25
+                            continue
+                        elif vyber == 1 and zustatek_uctu < 500:
+                            print("\nNEDOSTATEK PROSTŘEDKŮ NA ÚČTU")
+                            continue
+                        elif vyber == 2 and zustatek_uctu >= 1000:
+                            input("\nODEBERTE ČÁSTKU\n1000 KČ\n")
+                            zustatek_uctu -= 1000
+                            vybery_zdarma -= 1
+                            if vybery_zdarma <= 0:
+                                zustatek_uctu -= 25
+                            continue
+                        elif vyber == 2 and zustatek_uctu < 1000:
+                            print("\nNEDOSTATEK PROSTŘEDKŮ NA ÚČTU")
+                            continue
+                        elif vyber == 3 and zustatek_uctu >= 2000:
+                            input("\nODEBERTE ČÁSTKU\n2000 KČ\n")
+                            zustatek_uctu -= 2000
+                            vybery_zdarma -= 1
+                            if vybery_zdarma <= 0:
+                                zustatek_uctu -= 25
+                            continue
+                        elif vyber == 3 and zustatek_uctu < 2000:
+                            print("\nNEDOSTATEK PROSTŘEDKŮ NA ÚČTU")
+                            continue
+                        elif vyber == 4 and zustatek_uctu >= 3000:
+                            input("\nODEBERTE ČÁSTKU\n3000 KČ\n")
+                            zustatek_uctu -= 3000
+                            vybery_zdarma -= 1
+                            if vybery_zdarma <= 0:
+                                zustatek_uctu -= 25
+                            continue
+                        elif vyber == 4 and zustatek_uctu < 3000:
+                            print("\nNEDOSTATEK PROSTŘEDKŮ NA ÚČTU")
+                            continue
+                        elif vyber == 5 and zustatek_uctu >= 4000:
+                            input("\nODEBERTE ČÁSTKU\n4000 KČ\n")
+                            zustatek_uctu -= 4000
+                            vybery_zdarma -= 1
+                            if vybery_zdarma <= 0:
+                                zustatek_uctu -= 25
+                            continue
+                        elif vyber == 5 and zustatek_uctu < 4000:
+                            print("\nNEDOSTATEK PROSTŘEDKŮ NA ÚČTU")
+                            continue
+                        elif vyber == 6 and zustatek_uctu >= 5000:
+                            input("\nODEBERTE ČÁSTKU\n5000 KČ\n")
+                            zustatek_uctu -= 5000
+                            vybery_zdarma -= 1
+                            if vybery_zdarma <= 0:
+                                zustatek_uctu -= 25
+                            continue
+                        elif vyber == 6 and zustatek_uctu < 5000:
+                            print("\nNEDOSTATEK PROSTŘEDKŮ NA ÚČTU")
+                            continue
+                        elif vyber == 7 and zustatek_uctu >= 6000:
+                            input("\nODEBERTE ČÁSTKU\n6000 KČ\n")
+                            zustatek_uctu -= 6000
+                            vybery_zdarma -= 1
+                            if vybery_zdarma <= 0:
+                                zustatek_uctu -= 25
+                            continue
+                        elif vyber == 7 and zustatek_uctu < 6000:
+                            print("\nNEDOSTATEK PROSTŘEDKŮ NA ÚČTU")
+                            continue
+                        elif vyber == 8:
+                            jina_castka = int(input("\nZADEJ ČÁSTKU\nČÁSTKA MUSÍ BÝT DĚLITELNÁ 500 KČ\n"))
+                            if jina_castka <= zustatek_uctu and jina_castka % 500 == 0:
+                                input(f"\nODEBERTE ČÁSTKU\n{jina_castka}")
+                                zustatek_uctu -= jina_castka
+                            elif jina_castka > zustatek_uctu and jina_castka % 500 == 0:
+                                print("\nNEDOSTATEK PROSTŘEDKŮ NA ÚČTU")
+                                continue
+                            elif jina_castka % 500 != 0:
+                                print("\nNEPLATNÉ ZADÁNÍ\nČÁSTKA MUSÍ BÝT DĚLITELNÁ 500 KČ\n")
+                                continue
+
+                elif menu == 2:
+                    print(f"\nZŮSTATEK NA VAŠEM ÚČTU JE {zustatek_uctu} Kč\n")
+                    continue
+
+                elif menu == 3:
+                    zmena_pinu1 = getpass.getpass(prompt="\nZADEJTE VÁŠ NOVÝ ČTYŘMÍSTNÝ PIN KÓD\nPRO POTVRZENÍ ZADÁNÍ STISKNĚTE OK\nV DALŠÍM KROKU BUDETE VYZVÁNÍ\n ZADAT NOVÝ PIN KÓD PRO KONTROLU\n")
+                    while len(zmena_pinu1) != 4 or not zmena_pinu1.isdigit():
+                        print("\nPIN MUSÍ OBSAHOVAT 4 ČÍSLICE")
+                        zmena_pinu1 = getpass.getpass(prompt="\nZADEJTE VÁŠ NOVÝ ČTYŘMÍSTNÝ PIN KÓD\nPRO POTVRZENÍ ZADÁNÍ STISKNĚTE OK\nV DALŠÍM KROKU BUDETE VYZVÁNÍ\n ZADAT NOVÝ PIN KÓD PRO KONTROLU\n")
+                    zmena_pinu2 = getpass.getpass(prompt="\nPRO KONTROLU ZADEJTE VÁŠ NOVÝ PIN KÓD JEŠTĚ JEDNOU\n")
+                    while len(zmena_pinu2) != 4 or not zmena_pinu2.isdigit():
+                        print("\nPIN MUSÍ OBSAHOVAT 4 ČÍSLICE")
+                        zmena_pinu2 = getpass.getpass(prompt="\nPRO KONTROLU ZADEJTE VÁŠ NOVÝ PIN KÓD JEŠTĚ JEDNOU\n")
+                    if zmena_pinu1 == zmena_pinu2:
+                        pin = zmena_pinu1
+                        print("\nVÁŠ PIN KÓD BYL ÚSPĚŠNĚ ZMĚNĚN\n")
+                        vloz_pin = getpass.getpass(prompt='\nZADEJTE VÁŠ PIN\nA STISKNĚTE TLAČÍTKO "ENTER"\n')
+                        if vloz_pin == pin:
+                            continue
+                        pokusy_zmenu_pin -= 1
+                        while vloz_pin != pin:
+                            vloz_pin = getpass.getpass(prompt='\nNESPRÁVNÝ PIN\n\nZADEJTE VÁŠ PIN\nA STISKNĚTE TLAČÍTKO "ENTER"\n')
+                            pokusy_zmenu_pin -= 1
+                            if pokusy_zmenu_pin <= 0:
+                                input("\nPROSÍM, ODEBERTE VAŠI KARTU\n")
+                                break
+                    elif zmena_pinu1 != zmena_pinu2:
+                        print("\nZADANÉ PIN KÓDY SE NESHODUJÍ\nVÁŠ PIN KÓD NEBYL ZMĚNĚN\n")
+                        continue
+
+                elif menu == 4:
+                    vklad = int(input("\nVLOŽTE BANKOVKY\n\nMAXIMÁLNÍ VKLAD 250 000 KČ\nZÁVISÍ NA AKTUÁLNÍCH LIMITECH\nMAXIMÁLNÍ POČET 300 KS\n"))
+                    if max(0, 250000) and vklad % 100 == 0:
+                        zustatek_uctu += vklad
+                        print(f"\nVAŠE PROSTŘEDKY BYLY PŘIDÁNY NA ÚČET\n{vklad} KČ\n")
+                        continue
+                    elif vklad > 250000 or vklad % 100 != 0:
+                        print("\nNESPRÁVNÁ HODNOTA\nOPAKUJTE VKLAD ZNOVU\n")
+                        continue
+
+                elif menu == 5:
+                    input("\nPROSÍM, ODEBERTE VAŠI KARTU\n")
+                    break
