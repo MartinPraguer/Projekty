@@ -1,0 +1,92 @@
+### 027 --- TERMINÁL AUTOMOBILOVÝCH ZNAČEK (SPZ) ---
+
+# 1. značky mají 6 symbolů: první dva jsou vždy písmena; pokud je třetí číslo - čtvté a páté bude také číslo; pokud je třetí písmeno a čtvrté číslo - páte bude také číslo; pokud je třetí a čtvrté písmeno, páté může být, ale nemusí být číslo; šesté je vždy číslo
+# 2. vytvoř seznam 10 náhodných značek
+# 3. vytvoř terminál k přidání další náhodné značky, k odebrání značky a přidání výběrové značky do toho seznamu
+
+import random
+import string
+
+def generuj_znacku():
+    pismena = string.ascii_uppercase  # Abeceda velkými písmeny
+    cisla = string.digits  # Číslice
+
+    # První dva znaky jsou vždy písmena
+    prvni_dva = random.choices(pismena, k=2)
+
+    # Třetí znak je buď písmeno nebo číslice
+    if random.random() < 0.5:
+        treti = random.choice(cisla)
+    else:
+        treti = random.choice(pismena)
+
+    # Pokud je na třetí pozici číslo, i čtvrtý je číslo; jinak je náhodným výběrem na čtvrté pozici číslo nebo písmeno
+    if treti in cisla:
+        ctvrty = random.choice(cisla)
+    elif random.random() < 0.5:
+        ctvrty = random.choice(cisla)
+    else:
+        ctvrty = random.choice(pismena)
+
+    # Pokud je na třetí anebo čtvrté pozici číslice, i pátý je číslice; jinak je náhodným výběrem číslo nebo písmeno
+    if treti in cisla or ctvrty in cisla:
+        paty = random.choice(cisla)
+    elif ctvrty in cisla:
+        paty = random.choice(cisla)
+    elif random.random() < 0.5:
+        paty = random.choice(cisla)
+    else:
+        paty = random.choice(pismena)
+
+    # Šestý znak je vždycky číslice
+    sesty = random.choice(cisla)
+
+    # Spojení výsledných znaků dohromady a vrácení jako řetězec
+    return ''.join(prvni_dva + [treti] + [ctvrty] + [paty] + [sesty])
+
+# Testování funkce
+seznam_znacek = [generuj_znacku() for _ in range(10)]
+
+
+
+def odeber_znacku(seznam, znacka):
+    if znacka in seznam:
+        seznam.remove(znacka)
+        print(f"Odebrána značka: {znacka}")
+    else:
+        print("Značka nenalezena v seznamu.")
+
+
+# Terminál k přidání další náhodné značky, k odebrání značky a přidání výběrové značky do seznamu
+while True:
+    print()
+    print("Seznam značek:", seznam_znacek)
+    print()
+    print("1. Přidat náhodnou značku")
+    print("2. Odebrat značku")
+    print("3. Přidat výběrovou značku")
+    print("4. Konec")
+    volba = input("Vyberte akci: ")
+    print()
+
+    if volba == "1":
+        nova_znacka = generuj_znacku()
+        seznam_znacek.append(nova_znacka)
+        print(f"Přidána nová značka: {nova_znacka}")
+    elif volba == "2":
+        znacka_k_odstraneni = input("Zadejte značku k odstranění: ")
+        znacka_k_odstraneni = znacka_k_odstraneni.upper()
+        odeber_znacku(seznam_znacek, znacka_k_odstraneni)
+    elif volba == "3":
+        vyber = input("Zadejte hodnotu výběrové značky: ")
+        vyber = vyber.upper()
+        if len(vyber) == 6:
+            seznam_znacek.append(vyber)
+            print(f"Přidána výběrová značka: {vyber}")
+        else:
+            print("Špatný počet znaků.")
+    elif volba == "4":
+        print("Konec programu.")
+        break
+    else:
+        print("Neplatná volba. Zadejte číslo 1, 2, 3 nebo 4.")
