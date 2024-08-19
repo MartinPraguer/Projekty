@@ -1,0 +1,22 @@
+### 021 --- VÝPOČET PRŮMĚRU ZADANÝCH ČÍSEL ---
+
+print("Zadej čísla, za každým Enter nebo jen Enter pro ukončení")
+
+soucet_cisel = 0
+pocet_cisel = 0
+
+while True:
+    vstup_cisel = input("číslo: ")
+    if vstup_cisel:
+        try:
+            number = float(vstup_cisel)
+            soucet_cisel += number
+            pocet_cisel += 1
+        except ValueError as err:
+            print("Zadej číslo!")
+            continue
+    else:
+        break
+
+
+print("počet =", pocet_cisel, "celkem =", soucet_cisel, "průměr =", soucet_cisel / pocet_cisel)
