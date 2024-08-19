@@ -1,0 +1,46 @@
+### 031 --- AUTOMAT NA COLU ---
+
+from random import randint
+
+pocet_col = randint(0, 2)
+
+while True:
+    if pocet_col > 0:
+        cola_za = 50
+        vhozeno = 0
+        print("Cena coly: 50")
+        while cola_za > 0:
+            vhozena_mince = input("Vhoď minci 50, 20, 10, 5, 2, 1 nebo napiš zrušit:\n")
+            if vhozena_mince.isdigit():  # Zkontrolujeme, zda je vhozený vstup číslo
+                vhozena_mince = int(vhozena_mince)
+                if vhozena_mince in [50, 20, 10, 5, 2, 1]:
+                    cola_za -= vhozena_mince
+                    vhozeno += vhozena_mince
+                    if cola_za > 0:
+                        print("Zaplať ještě:", cola_za)
+                    kolik_vrati = vhozeno - 50
+                    if kolik_vrati >= 0:
+                        pocet_col -= 1
+                        print("Vydávám colu a vrácím: ", kolik_vrati)
+                        print()
+                else:
+                    print("\033[1mNeplatné zadání.\033[0m")
+                    print()
+                    print("Zaplať ještě:", cola_za)
+            elif vhozena_mince.lower() == "zrušit" or vhozena_mince.lower() == "zrusit":  # Ověříme, zda byla zadaná volba "zrusit" (ignoruje velikost písmen)
+                kolik_vrati = vhozeno
+                if kolik_vrati == 0:
+                    print("\033[3mV této chvíli se nic neděje.\033[0m") # \033[3mitalic\033[0m
+                    print()
+                    break
+                if kolik_vrati > 0:
+                    print("Vydávání zrušeno, vrácím: ", kolik_vrati)
+                    print()
+                    break
+            else:
+                print("\033[1mNeplatné zadání.\033[0m") # \033[1;30mbolt\033[0m
+                print()
+                print("Zaplať ještě:", cola_za)
+    else:
+        print("Litujeme, cola došla.")
+        break
