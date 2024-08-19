@@ -1,0 +1,38 @@
+### 010 (10.A) --- POROVNÁNÍ 3 NÁHODNĚ GENEROVANÝCH ČÍSEL ---
+
+import random
+
+number1 = random.randint(1, 100)
+number2 = random.randint(1, 100)
+number3 = random.randint(1, 100)
+
+print(f"čísla: {number1}, {number2}, {number3}\n")
+
+if number1 > number2 > number3:
+    print(f"{number1} je největší, {number2} je menší, {number3} je nejmenší.")
+elif number3 > number2 > number1:
+    print(f"{number3} je největší, {number2} je menší, {number1} je nejmenší.")
+elif number2 > number3 > number1:
+    print(f"{number2} je největší, {number3} je menší, {number1} je nejmenší.")
+elif number2 > number1 > number3:
+    print(f"{number2} je největší, {number1} je menší, {number3} je nejmenší.")
+elif number1 > number3 > number2:
+    print(f"{number1} je největší, {number3} je menší, {number2} je nejmenší.")
+elif number3 > number1 > number2:
+    print(f"{number3} je největší, {number1} je menší, {number2} je nejmenší.")
+
+elif number1 == number2 > number3:
+    print(f"{number1} je shodné s {number2} a jsou větší než {number3}.")
+elif number1 == number2 < number3:
+    print(f"{number1} je shodné s {number2} a jsou menší než {number3}.")
+elif number1 == number3 > number2:
+    print(f"{number1} je shodné s {number3} a jsou větší než {number2}.")
+elif number1 == number3 < number2:
+    print(f"{number1} je shodné s {number3} a jsou menší než {number2}.")
+elif number2 == number3 > number1:
+    print(f"{number2} je shodné s {number3} a jsou větší než {number1}.")
+elif number2 == number3 < number1:
+    print(f"{number2} je shodné s {number3} a jsou menší než {number1}.")
+
+else:
+  print("Všechny tři jsou stejně velké!")
