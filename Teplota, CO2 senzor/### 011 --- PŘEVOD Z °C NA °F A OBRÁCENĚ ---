@@ -1,0 +1,13 @@
+### 011 --- PŘEVOD Z °C NA °F A OBRÁCENĚ ---
+
+ vyber = input("Chceš vědět °C nebo °F? (c/f)\n")
+
+if vyber == "f" or vyber == "F" or vyber == "°f" or vyber == "°F":
+    CnaF = float(input("Zadej počet °C:\n"))
+    CnaF = str(float(CnaF * 9 / 5 + 32))
+    print(CnaF + "°F")
+
+if vyber == "c" or vyber == "C" or vyber == "°c" or vyber == "°C":
+    FnaC = float(input("Zadej počet °F:\n"))
+    FnaC = str(float((FnaC - 32) * 5 / 9))
+    print(FnaC + "°C")
