@@ -1,0 +1,51 @@
+### 020 (20.A) --- GENERÁTOR NÁHODNÝCH ČÍSEL DO SPORTKY s random.randint ---
+
+import random
+
+
+while True:
+
+    hod1 = random.randint(1, 49)
+    hod2 = random.randint(1, 49)
+    hod3 = random.randint(1, 49)
+    hod4 = random.randint(1, 49)
+    hod5 = random.randint(1, 49)
+    hod6 = random.randint(1, 49)
+    hod7 = random.randint(1, 49)
+
+    while True:
+        if hod2 == hod1:
+            hod2 = random.randint(1, 49)
+        elif hod2 != hod1:
+            break
+
+    while True:
+        if hod3 == hod2 or hod3 == hod1:
+            hod3 = random.randint(1, 49)
+            continue
+        elif hod3 != hod2 or hod3 != hod1:
+            break
+
+    while True:
+        if hod4 == hod3 or hod4 == hod2 or hod4 == hod1:
+            hod4 = random.randint(1, 49)
+            continue
+        elif hod4 != hod3 or hod4 != hod2 or hod4 != hod1:
+            break
+
+    while True:
+        if hod5 == hod4 or hod5 == hod3 or hod5 == hod2 or hod5 == hod1:
+            hod5 = random.randint(1, 49)
+            continue
+        elif hod5 != hod4 or hod5 != hod3 or hod5 != hod2 or hod5 != hod1:
+            break
+
+    while True:
+        if hod6 == hod5 or hod6 == hod4 or hod6 == hod3 or hod6 == hod2 or hod6 == hod1:
+            hod6 = random.randint(1, 49)
+            continue
+        elif hod6 != hod5 or hod6 != hod4 or hod6 != hod3 or hod6 != hod2 or hod6 != hod1:
+            break
+
+    print(hod1, hod2, hod3, hod4, hod5, hod6)
+    input()
