@@ -1,4 +1,4 @@
-### 14 --- GENERÁTOR NÁHODNÝCH SLOV V NÁHODNÝ ČAS ---
+### 014 --- GENERÁTOR NÁHODNÝCH SLOV V NÁHODNÝ ČAS ---
 
 # from threading import Timer
 # import random
