@@ -1,4 +1,4 @@
-### 1 (1.A) --- GENERÁTOR NÁHODNÝCH SLOV ----
+### 001 (1.A) --- GENERÁTOR NÁHODNÝCH SLOV ----
 # slova z Kouzelná krabička, Notepad++, Excel - odebrat duplicity, Gedit text editor odebrat řádky => tehdy jsem neznal, jak to udělat přímo v Pythonu
 
 import random
