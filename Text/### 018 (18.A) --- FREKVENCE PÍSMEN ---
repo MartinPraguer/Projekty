@@ -1,0 +1,25 @@
+### 018 (18.A) --- FREKVENCE PÍSMEN ---
+
+veta_cz = "Pes štěkal na dům."
+veta_cz = veta_cz.lower().replace(".", "").replace(" ", "")
+
+frekvence_pismen = dict()
+for pismeno in veta_cz:
+    if pismeno in frekvence_pismen:
+        frekvence_pismen[pismeno] += 1
+    else:
+        frekvence_pismen[pismeno] = 1
+
+print(frekvence_pismen)
+print("\n")
+
+for dvojice in frekvence_pismen.items():
+    print(dvojice)
+print("\n")
+
+for pismeno, frekvence in frekvence_pismen.items():
+    print(f"Pismeno {pismeno} se nachazi v textu {frekvence} krat")
+print("\n")
+
+for pismeno, frekvence in frekvence_pismen.items():
+    print(f"{pismeno}: {frekvence} krat")
