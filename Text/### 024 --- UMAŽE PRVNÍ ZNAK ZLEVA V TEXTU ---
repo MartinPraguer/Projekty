@@ -1,0 +1,8 @@
+### 024 --- UMAŽE PRVNÍ ZNAK ZLEVA V TEXTU ---
+
+vstup = input("Zadejte větu nebo slovo: ")
+if len(vstup) > 0:
+    novy_text = vstup[1:]
+    print("Text bez prvního znaku:", novy_text)
+else:
+    print("Prázdný vstup!")
